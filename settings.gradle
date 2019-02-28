@@ -1,0 +1,13 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'demo-dubbo'
+include 'producer'
+findProject(':producer')?.name = 'dubbo-producer'
+include 'consumer'
+findProject(':consumer')?.name = 'dubbo-consumer'
+include 'model'
+findProject(':model')?.name = 'dubbo-model'
+
