@@ -10,7 +10,8 @@
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <dubbo:registry address="multicast://224.5.6.7:1234" />
 
+    <!-- 这里设置的是 10000, 但是会调用三次（重试两次）所以实际是 30s, retries 重试次数, 默认为：2-->
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="demoApi" interface="iunsuccessful.demo.dubbo.producer.DemoApi" />
+    <dubbo:reference id="demoApi" interface="iunsuccessful.demo.dubbo.producer.DemoApi" timeout="5000" retries="1" />
 
 </beans>

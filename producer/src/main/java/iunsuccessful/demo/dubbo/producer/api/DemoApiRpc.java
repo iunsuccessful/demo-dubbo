@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author Created by 依韵 on 2019/2/28 .
  */
-@Service(interfaceClass = DemoApi.class)
+@Service(interfaceClass = DemoApi.class, timeout = 10000, retries = 0)
 public class DemoApiRpc implements DemoApi {
 
     @Autowired

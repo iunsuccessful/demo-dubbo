@@ -18,7 +18,14 @@ public class HelloController {
 
     @RequestMapping("index")
     public String index() {
-        return demoApi.sayHello("lqz");
+        Long begin = System.currentTimeMillis()/1000;
+        try {
+            String result = demoApi.sayHello("lqz");
+            return result;
+        } finally {
+            Long end = System.currentTimeMillis()/1000;
+            System.out.println(begin - end);
+        }
     }
 
 }
